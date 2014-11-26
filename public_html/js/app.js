@@ -45,6 +45,10 @@ App.Contributor = Ember.Object.extend({
 	})
   }
 
+
+
+
+
 });
 App.Contributor.reopenClass({
 	allContributors: [],
@@ -54,6 +58,7 @@ App.Contributor.reopenClass({
 		dataType: 'jsonp',
 		context: this,
 		success: function(response){
+                        console.log("ok");
 			response.data.forEach(function(contributor){
 			this.allContributors.addObject(App.Contributor.create(contributor))
 		}, this)
